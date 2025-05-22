@@ -7,11 +7,11 @@ private class AccountTriggerTest {
 
     @isTest
     static void testInsertValidAccount() {
-        Account acc = new Account(Name = 'Empresa X', AnnualRevenue = 1000000);
+        Account acc = new Account(Name = 'Empresa Y', AnnualRevenue = 1000000);
         insert acc;
 
         Account inserted = [SELECT Name, AnnualRevenue FROM Account WHERE Id = :acc.Id];
-        System.assertEquals('Empresa X', inserted.Name);
+        System.assertEquals('Empresa Y', inserted.Name);
         System.assertEquals(1000000, inserted.AnnualRevenue);
     }
 
