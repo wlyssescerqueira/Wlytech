@@ -4,6 +4,8 @@ trigger AccountTrigger on Account (before insert, before update) {
             acc.addError('O campo Nome é obrigatório.');
         }
 
-
+        if (acc.AnnualRevenue != null && acc.AnnualRevenue < 0) {
+            acc.addError('A Receita Anual não pode ser negativa.');
+        }
     }
 }
