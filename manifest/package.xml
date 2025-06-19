@@ -8,9 +8,5 @@
         <members>AccountTrigger</members>
         <name>ApexTrigger</name>
     </types>
-    <types>
-        <members>feature_test_coverage_extension</members>
-        <name>ApexTestSuite</name>
-    </types>
     <version>63.0</version>
 </Package>
