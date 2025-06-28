@@ -9,7 +9,11 @@
         <name>ApexTrigger</name>
     </types>
     <types>
-        <members>feature_test_coverage_extension</members>
+        <members>accountList</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <types>
+        <members>feature_account_process</members>
         <name>ApexTestSuite</name>
     </types>
     <version>63.0</version>

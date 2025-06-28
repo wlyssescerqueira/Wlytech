@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Lista de Contas" icon-name="standard:account">
+        <template if:true={accounts}>
+            <template for:each={accounts} for:item="acc">
+                <p key={acc.Id} class="slds-p-left_medium">
+                    • {acc.Name}
+                </p>
+            </template>
+        </template>
+        <template if:true={error}>
+            <p class="slds-text-color_error slds-p-left_medium">Erro ao carregar contas.</p>
+        </template>
+    </lightning-card>
+</template>
