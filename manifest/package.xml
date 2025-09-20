@@ -9,10 +9,6 @@
         <name>ApexTrigger</name>
     </types>
     <types>
-        <members>accountList</members>
-        <name>LightningComponentBundle</name>
-    </types>
-    <types>
         <members>feature_account_process</members>
         <name>ApexTestSuite</name>
     </types>
