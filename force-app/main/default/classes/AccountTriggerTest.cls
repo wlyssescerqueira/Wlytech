@@ -15,7 +15,7 @@ private class AccountTriggerTest {
 
     @isTest
     static void testInsertValidAccount() {
-        Account acc = new Account(Name = 'Empresa YZZZ', AnnualRevenue = 1000000);
+        Account acc = new Account(Name = 'Empresa YZZZxx', AnnualRevenue = 1000000);
         insert acc;
 
         Account inserted = [SELECT Name, AnnualRevenue FROM Account WHERE Id = :acc.Id];
