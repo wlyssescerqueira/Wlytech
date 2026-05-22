@@ -202,4 +202,57 @@ private class AccountTriggerTest {
         }
         Test.stopTest();
     }
+
+    @isTest
+    static void testMatchBillingAddressCopiesPostalCode() {
+        Account acc = new Account(
+            Name = 'Empresa Teste',
+            BillingPostalCode = '01310-100',
+            Match_Billing_Address__c = true
+        );
+
+        Test.startTest();
+        insert acc;
+        Test.stopTest();
+
+        Account inserted = [SELECT ShippingPostalCode, BillingPostalCode FROM Account WHERE Id = :acc.Id];
+        System.assertEquals('01310-100', inserted.ShippingPostalCode, 'CEP de envio deve ser igual ao CEP de cobrança');
+    }
+
+    @isTest
+    static void testMatchBillingAddressFalseDoesNotCopy() {
+        Account acc = new Account(
+            Name = 'Empresa Teste Sem Match',
+            BillingPostalCode = '01310-100',
+            ShippingPostalCode = '04538-080',
+            Match_Billing_Address__c = false
+        );
+
+        Test.startTest();
+        insert acc;
+        Test.stopTest();
+
+        Account inserted = [SELECT ShippingPostalCode FROM Account WHERE Id = :acc.Id];
+        System.assertEquals('04538-080', inserted.ShippingPostalCode, 'CEP de envio não deve ser alterado quando Match Billing Address é falso');
+    }
+
+    @isTest
+    static void testMatchBillingAddressOnUpdate() {
+        Account acc = new Account(
+            Name = 'Empresa Update',
+            BillingPostalCode = '01310-100',
+            ShippingPostalCode = '04538-080',
+            Match_Billing_Address__c = false
+        );
+        insert acc;
+
+        acc.Match_Billing_Address__c = true;
+
+        Test.startTest();
+        update acc;
+        Test.stopTest();
+
+        Account updated = [SELECT ShippingPostalCode FROM Account WHERE Id = :acc.Id];
+        System.assertEquals('01310-100', updated.ShippingPostalCode, 'CEP de envio deve ser atualizado ao ativar Match Billing Address');
+    }
 }

@@ -7,5 +7,6 @@ trigger AccountTrigger on Account (before insert, before update) {
         if (acc.AnnualRevenue != null && acc.AnnualRevenue < 0) {
             acc.addError('A Receita Anual não pode ser negativa.');
         }
+
     }
 }
