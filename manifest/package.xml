@@ -18,5 +18,13 @@
         <members>accountList</members>
         <name>LightningComponentBundle</name>
     </types>
+    <types>
+        <members>Manage_Positions</members>
+        <name>PermissionSet</name>
+    </types>
+    <types>
+        <members>Recruiters</members>
+        <name>PermissionSetGroup</name>
+    </types>
     <version>63.0</version>
 </Package>

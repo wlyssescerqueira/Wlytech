@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Grupo de conjuntos de permissões para Recrutadores.</description>
+    <label>Recruiters</label>
+    <permissionSets>Manage_Positions</permissionSets>
+</PermissionSetGroup>
