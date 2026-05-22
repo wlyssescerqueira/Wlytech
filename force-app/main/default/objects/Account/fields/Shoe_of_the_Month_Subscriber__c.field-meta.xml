@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shoe_of_the_Month_Subscriber__c</fullName>
+    <description>Currently subscribed to Shoe of the Month club.</description>
+    <label>Shoe of the Month Subscriber</label>
+    <type>Checkbox</type>
+    <defaultValue>false</defaultValue>
+</CustomField>
