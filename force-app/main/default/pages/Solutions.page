@@ -1,0 +1,4 @@
+<apex:page docType="html-5.0" sidebar="false" showHeader="true">
+    <h1>Solutions</h1>
+    <p>Solutions tab placeholder page.</p>
+</apex:page>
